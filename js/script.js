@@ -287,6 +287,18 @@ const lightbox = document.querySelector("#lightbox");
 const lightboxImage = document.querySelector("#lightbox-img");
 let lastLightboxTrigger;
 
+const gallerySection = document.querySelector(".gallery");
+if (gallerySection) {
+  if ("IntersectionObserver" in window) {
+    const galleryObserver = new IntersectionObserver(([entry]) => {
+      gallerySection.classList.toggle("is-active", entry.isIntersecting);
+    }, { threshold: 0.12 });
+    galleryObserver.observe(gallerySection);
+  } else {
+    gallerySection.classList.add("is-active");
+  }
+}
+
 document.querySelectorAll(".gallery-item").forEach((item) => {
   item.addEventListener("click", () => {
     lastLightboxTrigger = item;
@@ -421,9 +433,11 @@ function loadStylesheet(href) {
   });
 }
 
-const carousels = [...document.querySelectorAll(".differential-swiper, .gallery-swiper, .testimonials-swiper")];
+const carousels = [...document.querySelectorAll(".differential-swiper")];
+const testimonialsCarouselElement = document.querySelector(".testimonials-swiper");
 const procedureCarouselElement = document.querySelector(".procedure-swiper");
 let carouselInstances = [];
+let testimonialsCarousel = null;
 let procedureCarousel = null;
 let carouselAssetsLoaded = false;
 let carouselAssetsPromise;
@@ -488,53 +502,80 @@ async function updateCarousels() {
   }
 }
 
-async function updateProcedureCarousel() {
-  if (!procedureCarouselElement) return;
-  if (window.innerWidth > 680) {
-    if (procedureCarousel) {
-      procedureCarousel.destroy(true, true);
-      procedureCarousel = null;
-    }
-    procedureCarouselElement.classList.remove("swiper-unavailable");
-    return;
-  }
-  if (procedureCarousel) return;
+async function updateTestimonialsCarousel() {
+  if (!testimonialsCarouselElement || testimonialsCarousel) return;
 
   try {
     await loadCarouselAssets();
-    if (window.innerWidth > 680 || procedureCarousel) return;
+    if (testimonialsCarousel) return;
 
-    procedureCarouselElement.classList.remove("swiper-unavailable");
-    procedureCarousel = new window.Swiper(procedureCarouselElement, {
-      slidesPerView: 1.12,
-      centeredSlides: true,
-      spaceBetween: 16,
-      speed: 900,
-      freeMode: {
-        enabled: true,
-        sticky: true,
-        momentum: true,
-        momentumRatio: 0.65,
-        momentumVelocityRatio: 0.65,
-      },
+    testimonialsCarouselElement.classList.remove("swiper-unavailable");
+    testimonialsCarousel = new window.Swiper(testimonialsCarouselElement, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 850,
       resistance: true,
-      resistanceRatio: 0.76,
-      threshold: 3,
-      longSwipesRatio: 0.2,
-      roundLengths: true,
-      watchSlidesProgress: true,
+      resistanceRatio: 0.72,
+      threshold: 5,
+      longSwipesRatio: 0.18,
       watchOverflow: true,
       grabCursor: true,
       keyboard: { enabled: true, onlyInViewport: true },
       a11y: {
         enabled: true,
-        containerMessage: "Carrossel de tratamentos. Deslize para navegar entre os procedimentos.",
-        slideLabelMessage: "Tratamento {{index}} de {{slidesLength}}",
-        prevSlideMessage: "Tratamento anterior",
-        nextSlideMessage: "Próximo tratamento",
-        firstSlideMessage: "Este é o primeiro tratamento",
-        lastSlideMessage: "Este é o último tratamento",
-        paginationBulletMessage: "Ir para o tratamento {{index}}",
+        containerMessage: "Carrossel de casos antes e depois. Deslize para navegar entre os relatos.",
+        slideLabelMessage: "Caso {{index}} de {{slidesLength}}",
+        prevSlideMessage: "Caso anterior",
+        nextSlideMessage: "Próximo caso",
+        firstSlideMessage: "Este é o primeiro caso",
+        lastSlideMessage: "Este é o último caso",
+        paginationBulletMessage: "Ir para o caso {{index}}",
+      },
+      on: {
+        setTransition(swiper, duration) {
+          swiper.wrapperEl.classList.toggle("is-sliding", duration > 0);
+        },
+      },
+      pagination: {
+        el: testimonialsCarouselElement.querySelector(".swiper-pagination"),
+        clickable: true,
+      },
+    });
+  } catch (error) {
+    console.error("O carrossel de casos não pôde ser carregado; usando navegação horizontal nativa.", error);
+    testimonialsCarouselElement.classList.add("swiper-unavailable");
+  }
+}
+
+async function updateProcedureCarousel() {
+  if (!procedureCarouselElement) return;
+  if (procedureCarousel) return;
+
+  try {
+    await loadCarouselAssets();
+    if (procedureCarousel) return;
+
+    procedureCarouselElement.classList.remove("swiper-unavailable");
+    procedureCarousel = new window.Swiper(procedureCarouselElement, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 900,
+      resistance: true,
+      resistanceRatio: 0.72,
+      threshold: 6,
+      longSwipesRatio: 0.18,
+      watchOverflow: true,
+      grabCursor: true,
+      keyboard: { enabled: true, onlyInViewport: true },
+      a11y: {
+        enabled: true,
+        containerMessage: "Carrossel de páginas de tratamentos. Deslize para ver todos os cards.",
+        slideLabelMessage: "Página {{index}} de {{slidesLength}}",
+        prevSlideMessage: "Página anterior",
+        nextSlideMessage: "Próxima página",
+        firstSlideMessage: "Esta é a primeira página",
+        lastSlideMessage: "Esta é a última página",
+        paginationBulletMessage: "Ir para a página {{index}}",
       },
       pagination: {
         el: procedureCarouselElement.querySelector(".swiper-pagination"),
@@ -552,10 +593,12 @@ window.addEventListener("resize", () => {
   window.clearTimeout(carouselResizeTimer);
   carouselResizeTimer = window.setTimeout(() => {
     updateCarousels();
+    updateTestimonialsCarousel();
     updateProcedureCarousel();
   }, 180);
 });
 updateCarousels();
+updateTestimonialsCarousel();
 updateProcedureCarousel();
 
 async function setupScrollExperience() {

@@ -23,8 +23,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261120-2">
-  <script src="js/script.js?v=20261120-2" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=20261122-6">
+  <script src="js/script.js?v=20261122-5" defer></script>
 </head>
 
 <body>
@@ -128,9 +128,10 @@
         </header>
 
         <div class="procedure-grid procedure-swiper swiper" role="region"
-          aria-label="Tratamentos e procedimentos. No celular, arraste para navegar; cada card abre suas informações.">
-          <div class="swiper-wrapper" role="list">
-            <article class="service-card swiper-slide" role="listitem">
+          aria-label="Tratamentos e procedimentos. Arraste ou use as setas para navegar; cada card abre suas informações.">
+          <div class="swiper-wrapper" aria-label="Páginas de tratamentos">
+            <div class="treatment-grid-page swiper-slide" role="list" aria-label="Tratamentos em destaque">
+            <article class="service-card" role="listitem">
               <button class="service-card-hit" type="button" data-service="preventiva" aria-haspopup="dialog"
                 aria-controls="service-modal" aria-label="Saiba mais sobre Podologia Preventiva">
                 <span class="service-card-photo" aria-hidden="true">
@@ -148,11 +149,11 @@
                 </span>
                 <span class="service-card-title" role="heading" aria-level="3">Podologia Preventiva</span>
                 <span class="service-card-description">Acompanhamento de pele, unhas e pontos de pressão, com orientações para a rotina de cuidado.</span>
-                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">↗</b></span>
+                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">→</b></span>
               </button>
             </article>
 
-            <article class="service-card swiper-slide" role="listitem">
+            <article class="service-card" role="listitem">
               <button class="service-card-hit" type="button" data-service="geriatrica" aria-haspopup="dialog"
                 aria-controls="service-modal" aria-label="Saiba mais sobre Podologia Geriátrica">
                 <span class="service-card-photo" aria-hidden="true">
@@ -171,11 +172,11 @@
                 </span>
                 <span class="service-card-title" role="heading" aria-level="3">Podologia Geriátrica</span>
                 <span class="service-card-description">Atenção às mudanças dos pés com o passar do tempo, considerando mobilidade e histórico de saúde.</span>
-                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">↗</b></span>
+                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">→</b></span>
               </button>
             </article>
 
-            <article class="service-card swiper-slide" role="listitem">
+            <article class="service-card" role="listitem">
               <button class="service-card-hit" type="button" data-service="infantil" aria-haspopup="dialog"
                 aria-controls="service-modal" aria-label="Saiba mais sobre Podologia Infantil">
                 <span class="service-card-photo" aria-hidden="true">
@@ -195,11 +196,11 @@
                 </span>
                 <span class="service-card-title" role="heading" aria-level="3">Podologia Infantil</span>
                 <span class="service-card-description">Cuidado acolhedor para a pele e as unhas da criança, com a presença do responsável.</span>
-                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">↗</b></span>
+                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">→</b></span>
               </button>
             </article>
 
-            <article class="service-card swiper-slide" role="listitem">
+            <article class="service-card" role="listitem">
               <button class="service-card-hit" type="button" data-service="esportiva" aria-haspopup="dialog"
                 aria-controls="service-modal" aria-label="Saiba mais sobre Podologia Esportiva">
                 <span class="service-card-photo" aria-hidden="true">
@@ -217,11 +218,11 @@
                 </span>
                 <span class="service-card-title" role="heading" aria-level="3">Podologia Esportiva</span>
                 <span class="service-card-description">Orientações para quem pratica atividade física, considerando atrito, pressão e calçados.</span>
-                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">↗</b></span>
+                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">→</b></span>
               </button>
             </article>
 
-            <article class="service-card swiper-slide" role="listitem">
+            <article class="service-card" role="listitem">
               <button class="service-card-hit" type="button" data-service="laboral" aria-haspopup="dialog"
                 aria-controls="service-modal" aria-label="Saiba mais sobre Podologia Laboral">
                 <span class="service-card-photo" aria-hidden="true">
@@ -239,11 +240,13 @@
                 </span>
                 <span class="service-card-title" role="heading" aria-level="3">Podologia Laboral</span>
                 <span class="service-card-description">Cuidado para rotinas com longos períodos em pé, caminhadas frequentes ou calçados ocupacionais.</span>
-                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">↗</b></span>
+                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">→</b></span>
               </button>
             </article>
 
-            <article class="service-card swiper-slide" role="listitem">
+            </div>
+            <div class="treatment-extra-page swiper-slide" role="list" aria-label="Mais tratamentos">
+            <article class="service-card" role="listitem">
               <button class="service-card-hit" type="button" data-service="risco" aria-haspopup="dialog"
                 aria-controls="service-modal" aria-label="Saiba mais sobre cuidado do Pé de Risco">
                 <span class="service-card-photo" aria-hidden="true">
@@ -261,9 +264,10 @@
                 </span>
                 <span class="service-card-title" role="heading" aria-level="3">Pé de Risco</span>
                 <span class="service-card-description">Acompanhamento cuidadoso para pessoas com diabetes ou alterações de sensibilidade e circulação.</span>
-                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">↗</b></span>
+                <span class="service-card-action"><span>Saiba mais</span><b aria-hidden="true">→</b></span>
               </button>
             </article>
+            </div>
           </div>
           <div class="swiper-pagination" aria-label="Paginação dos tratamentos"></div>
         </div>
@@ -274,28 +278,100 @@
 
     <section class="testimonials section" id="depoimentos" data-watermark="05" aria-labelledby="testimonials-title">
       <div class="container">
-        <header class="section-heading section-heading-light reveal fade-in">
-          <p class="eyebrow">Depoimentos</p>
-          <h2 id="testimonials-title">Histórias reais, <em>no tempo certo.</em></h2>
-          <p>Este espaço será preenchido somente com relatos autorizados de pacientes.</p>
+        <header class="section-heading reveal fade-up">
+          <p class="eyebrow">Antes e depois</p>
+          <h2 id="testimonials-title">Cada caso merece <em>cuidado.</em></h2>
+          <p>Esta área receberá registros comparativos e relatos breves, publicados somente com autorização de cada paciente.</p>
         </header>
         <div class="swiper testimonials-swiper"
-          aria-label="Carrossel de depoimentos autorizados. Arraste ou use as setas do teclado.">
-          <div class="testimonial-list swiper-wrapper">
-            <article class="testimonial-card swiper-slide fade-up"><span class="testimonial-mark"
-                aria-hidden="true">“</span>
-              <p>[TODO: inserir depoimento real autorizado.]</p><span class="testimonial-credit">[TODO: identificação
-                autorizada]</span>
+          aria-label="Carrossel de casos antes e depois. Arraste ou use as setas do teclado para navegar.">
+          <div class="testimonial-list swiper-wrapper" aria-label="Casos de pacientes">
+            <article class="testimonial-card swiper-slide" aria-label="Espaço reservado para caso real 1">
+              <div class="case-comparison" aria-label="Comparação antes e depois">
+                <figure class="case-photo-slot">
+                  <span class="case-photo-label">Antes</span>
+                  <div class="case-photo-placeholder">
+                    <span class="case-photo-symbol" aria-hidden="true">+</span>
+                    <span>Adicionar imagem autorizada</span>
+                  </div>
+                </figure>
+                <figure class="case-photo-slot">
+                  <span class="case-photo-label">Depois</span>
+                  <div class="case-photo-placeholder">
+                    <span class="case-photo-symbol" aria-hidden="true">+</span>
+                    <span>Adicionar imagem autorizada</span>
+                  </div>
+                </figure>
+              </div>
+              <div class="case-story">
+                <span class="case-record-label">Caso 01 · material pendente</span>
+                <p class="case-story-eyebrow">Relato de paciente</p>
+                <span class="testimonial-mark" aria-hidden="true">“</span>
+                <p class="testimonial-quote">O depoimento breve será inserido após aprovação do paciente.</p>
+                <div class="case-patient">
+                  <span class="patient-photo-placeholder" aria-hidden="true">+</span>
+                  <span class="case-patient-meta"><strong>Identificação autorizada</strong><small>Nome ou iniciais com autorização</small></span>
+                </div>
+                <p class="case-consent-note">Imagens e relato aguardam autorização para publicação.</p>
+              </div>
             </article>
-            <article class="testimonial-card swiper-slide fade-up"><span class="testimonial-mark"
-                aria-hidden="true">“</span>
-              <p>[TODO: inserir depoimento real autorizado.]</p><span class="testimonial-credit">[TODO: identificação
-                autorizada]</span>
+            <article class="testimonial-card swiper-slide" aria-label="Espaço reservado para caso real 2">
+              <div class="case-comparison" aria-label="Comparação antes e depois">
+                <figure class="case-photo-slot">
+                  <span class="case-photo-label">Antes</span>
+                  <div class="case-photo-placeholder">
+                    <span class="case-photo-symbol" aria-hidden="true">+</span>
+                    <span>Adicionar imagem autorizada</span>
+                  </div>
+                </figure>
+                <figure class="case-photo-slot">
+                  <span class="case-photo-label">Depois</span>
+                  <div class="case-photo-placeholder">
+                    <span class="case-photo-symbol" aria-hidden="true">+</span>
+                    <span>Adicionar imagem autorizada</span>
+                  </div>
+                </figure>
+              </div>
+              <div class="case-story">
+                <span class="case-record-label">Caso 02 · material pendente</span>
+                <p class="case-story-eyebrow">Relato de paciente</p>
+                <span class="testimonial-mark" aria-hidden="true">“</span>
+                <p class="testimonial-quote">O depoimento breve será inserido após aprovação do paciente.</p>
+                <div class="case-patient">
+                  <span class="patient-photo-placeholder" aria-hidden="true">+</span>
+                  <span class="case-patient-meta"><strong>Identificação autorizada</strong><small>Nome ou iniciais com autorização</small></span>
+                </div>
+                <p class="case-consent-note">Imagens e relato aguardam autorização para publicação.</p>
+              </div>
             </article>
-            <article class="testimonial-card swiper-slide fade-up"><span class="testimonial-mark"
-                aria-hidden="true">“</span>
-              <p>[TODO: inserir depoimento real autorizado.]</p><span class="testimonial-credit">[TODO: identificação
-                autorizada]</span>
+            <article class="testimonial-card swiper-slide" aria-label="Espaço reservado para caso real 3">
+              <div class="case-comparison" aria-label="Comparação antes e depois">
+                <figure class="case-photo-slot">
+                  <span class="case-photo-label">Antes</span>
+                  <div class="case-photo-placeholder">
+                    <span class="case-photo-symbol" aria-hidden="true">+</span>
+                    <span>Adicionar imagem autorizada</span>
+                  </div>
+                </figure>
+                <figure class="case-photo-slot">
+                  <span class="case-photo-label">Depois</span>
+                  <div class="case-photo-placeholder">
+                    <span class="case-photo-symbol" aria-hidden="true">+</span>
+                    <span>Adicionar imagem autorizada</span>
+                  </div>
+                </figure>
+              </div>
+              <div class="case-story">
+                <span class="case-record-label">Caso 03 · material pendente</span>
+                <p class="case-story-eyebrow">Relato de paciente</p>
+                <span class="testimonial-mark" aria-hidden="true">“</span>
+                <p class="testimonial-quote">O depoimento breve será inserido após aprovação do paciente.</p>
+                <div class="case-patient">
+                  <span class="patient-photo-placeholder" aria-hidden="true">+</span>
+                  <span class="case-patient-meta"><strong>Identificação autorizada</strong><small>Nome ou iniciais com autorização</small></span>
+                </div>
+                <p class="case-consent-note">Imagens e relato aguardam autorização para publicação.</p>
+              </div>
             </article>
           </div>
           <div class="swiper-pagination" aria-label="Paginação dos depoimentos"></div>
@@ -353,43 +429,70 @@
     <section class="gallery section" id="ambiente" data-watermark="07" aria-labelledby="gallery-title">
       <div class="container">
         <header class="section-heading gallery-heading reveal fade-in">
-          <p class="eyebrow">Nosso ambiente</p>
-          <h2 id="gallery-title">Um ambiente pensado <em>para cuidar.</em></h2>
-          <p>Em breve, um olhar sobre os espaços reais da CL CLÍN.</p>
-        </header>
-        <div class="swiper gallery-swiper" aria-label="Galeria do ambiente. Arraste ou use as setas do teclado.">
-          <div class="gallery-grid swiper-wrapper">
-            <button class="gallery-item gallery-item-tall swiper-slide fade-up" type="button"
-              data-full="assets/images/ambiente-placeholder.svg"
-              aria-label="Ampliar placeholder da fotografia do ambiente 1"><img
-                src="assets/images/ambiente-placeholder.svg"
-                alt="Placeholder da fotografia do ambiente da clínica — TODO" loading="lazy" width="900"
-                height="1100"></button>
-            <button class="gallery-item swiper-slide fade-up" type="button"
-              data-full="assets/images/ambiente-placeholder.svg"
-              aria-label="Ampliar placeholder da fotografia do ambiente 2"><img
-                src="assets/images/ambiente-placeholder.svg" alt="Placeholder da fotografia da recepção — TODO"
-                loading="lazy" width="900" height="700"></button>
-            <button class="gallery-item swiper-slide fade-up" type="button"
-              data-full="assets/images/ambiente-placeholder.svg"
-              aria-label="Ampliar placeholder da fotografia do ambiente 3"><img
-                src="assets/images/ambiente-placeholder.svg"
-                alt="Placeholder da fotografia do espaço de atendimento — TODO" loading="lazy" width="900"
-                height="700"></button>
-            <button class="gallery-item gallery-item-wide swiper-slide fade-up" type="button"
-              data-full="assets/images/ambiente-placeholder.svg"
-              aria-label="Ampliar placeholder da fotografia do ambiente 4"><img
-                src="assets/images/ambiente-placeholder.svg"
-                alt="Placeholder da fotografia dos detalhes da clínica — TODO" loading="lazy" width="1200"
-                height="700"></button>
+          <div class="gallery-heading-title">
+            <p class="eyebrow">Nosso ambiente</p>
+            <h2 id="gallery-title">Um cuidado presente <em>em cada detalhe.</em></h2>
           </div>
-          <div class="swiper-pagination" aria-label="Paginação da galeria"></div>
+          <p class="gallery-description">Acolhimento, atenção e cuidado individualizado acompanham cada etapa do seu
+            atendimento.</p>
+        </header>
+        <div class="gallery-grid" role="group" aria-label="Imagens ilustrativas de atendimento podológico">
+          <button class="gallery-item" type="button" data-space-tile style="--tile-index: 0"
+            data-full="assets/images/procedimento-preventiva.webp"
+            aria-label="Ampliar imagem ilustrativa de podologia preventiva">
+            <img src="assets/images/procedimento-preventiva.webp"
+              alt="Imagem ilustrativa de atendimento de podologia preventiva" loading="lazy" decoding="async"
+              width="1200" height="900">
+            <span class="gallery-item-word" aria-hidden="true">CUIDADO</span>
+          </button>
+          <button class="gallery-item" type="button" data-space-tile style="--tile-index: 1"
+            data-full="assets/images/procedimento-geriatrica.webp"
+            aria-label="Ampliar imagem ilustrativa de podologia geriátrica">
+            <img src="assets/images/procedimento-geriatrica.webp"
+              alt="Imagem ilustrativa de atendimento de podologia geriátrica" loading="lazy" decoding="async"
+              width="1200" height="900">
+            <span class="gallery-item-word" aria-hidden="true">ACOLHIMENTO</span>
+          </button>
+          <button class="gallery-item" type="button" data-space-tile style="--tile-index: 2"
+            data-full="assets/images/procedimento-infantil.webp"
+            aria-label="Ampliar imagem ilustrativa de podologia infantil">
+            <img src="assets/images/procedimento-infantil.webp"
+              alt="Imagem ilustrativa de atendimento de podologia infantil" loading="lazy" decoding="async"
+              width="1200" height="900">
+            <span class="gallery-item-word" aria-hidden="true">ATENÇÃO</span>
+          </button>
+          <button class="gallery-item" type="button" data-space-tile style="--tile-index: 3"
+            data-full="assets/images/procedimento-esportiva.webp"
+            aria-label="Ampliar imagem ilustrativa de podologia esportiva">
+            <img src="assets/images/procedimento-esportiva.webp"
+              alt="Imagem ilustrativa de atendimento de podologia esportiva" loading="lazy" decoding="async"
+              width="1200" height="900">
+            <span class="gallery-item-word" aria-hidden="true">BEM-ESTAR</span>
+          </button>
+          <button class="gallery-item" type="button" data-space-tile style="--tile-index: 4"
+            data-full="assets/images/procedimento-laboral.webp"
+            aria-label="Ampliar imagem ilustrativa de podologia laboral">
+            <img src="assets/images/procedimento-laboral.webp"
+              alt="Imagem ilustrativa de atendimento de podologia laboral" loading="lazy" decoding="async"
+              width="1200" height="900">
+            <span class="gallery-item-word" aria-hidden="true">CONFORTO</span>
+          </button>
+          <button class="gallery-item" type="button" data-space-tile style="--tile-index: 5"
+            data-full="assets/images/procedimento-pe-de-risco.webp"
+            aria-label="Ampliar imagem ilustrativa de cuidado com pé de risco">
+            <img src="assets/images/procedimento-pe-de-risco.webp"
+              alt="Imagem ilustrativa de cuidado podológico para pé de risco" loading="lazy" decoding="async"
+              width="1200" height="900">
+            <span class="gallery-item-word" aria-hidden="true">SEGURANÇA</span>
+          </button>
         </div>
+        <p class="gallery-note">Imagens ilustrativas de atendimentos. As fotos reais do espaço da CL CLÍN serão
+          adicionadas em breve.</p>
       </div>
     </section>
 
     <section class="interlude" aria-label="Chamada para agendamento">
-      <img class="interlude-image" src="assets/images/ambiente-placeholder.svg" alt="" loading="lazy" width="1600"
+      <img class="interlude-image" src="assets/images/hero-relaxamento.webp" alt="" loading="lazy" width="1600"
         height="700">
       <div class="interlude-overlay" aria-hidden="true"></div>
       <div class="container interlude-inner reveal fade-up">
@@ -528,44 +631,46 @@
     <div class="modal-panel service-modal-panel" role="document">
       <button class="modal-close service-modal-close" type="button" aria-label="Fechar detalhes do serviço"
         data-close-service-modal>×</button>
-      <p class="eyebrow">CL CLÍN — Tratamentos e procedimentos</p>
-      <h2 id="service-modal-title"></h2>
-      <p class="service-modal-intro" id="service-modal-intro"></p>
-      <div class="service-modal-grid">
-        <section class="service-detail">
-          <h3>O que é</h3>
-          <p id="service-modal-what"></p>
-        </section>
-        <section class="service-detail">
-          <h3>Para quem é indicado</h3>
-          <p id="service-modal-audience"></p>
-        </section>
-        <section class="service-detail">
-          <h3>Necessidades atendidas</h3>
-          <ul id="service-modal-needs"></ul>
-        </section>
-        <section class="service-detail">
-          <h3>Benefícios esperados</h3>
-          <ul id="service-modal-benefits"></ul>
-        </section>
-        <section class="service-detail">
-          <h3>Como funciona o atendimento</h3>
-          <p id="service-modal-approach"></p>
-        </section>
-        <section class="service-detail service-care">
-          <h3>Cuidados e orientações</h3>
-          <p id="service-modal-care"></p>
-        </section>
+      <div class="service-modal-content" data-lenis-prevent>
+        <p class="eyebrow">CL CLÍN — Tratamentos e procedimentos</p>
+        <h2 id="service-modal-title"></h2>
+        <p class="service-modal-intro" id="service-modal-intro"></p>
+        <div class="service-modal-grid">
+          <section class="service-detail">
+            <h3>O que é</h3>
+            <p id="service-modal-what"></p>
+          </section>
+          <section class="service-detail">
+            <h3>Para quem é indicado</h3>
+            <p id="service-modal-audience"></p>
+          </section>
+          <section class="service-detail">
+            <h3>Necessidades atendidas</h3>
+            <ul id="service-modal-needs"></ul>
+          </section>
+          <section class="service-detail">
+            <h3>Benefícios esperados</h3>
+            <ul id="service-modal-benefits"></ul>
+          </section>
+          <section class="service-detail">
+            <h3>Como funciona o atendimento</h3>
+            <p id="service-modal-approach"></p>
+          </section>
+          <section class="service-detail service-care">
+            <h3>Cuidados e orientações</h3>
+            <p id="service-modal-care"></p>
+          </section>
+        </div>
+        <div class="service-modal-booking">
+          <a class="button button-dark" id="service-modal-booking-link" href="#contato">
+            <span id="service-modal-booking-label">Solicitar agendamento</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <p id="service-modal-booking-note" hidden></p>
+        </div>
+        <p class="service-modal-disclaimer">As informações são gerais e não substituem avaliação profissional ou
+          acompanhamento médico. A conduta é definida para cada pessoa.</p>
       </div>
-      <div class="service-modal-booking">
-        <a class="button button-dark" id="service-modal-booking-link" href="#contato">
-          <span id="service-modal-booking-label">Solicitar agendamento</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <p id="service-modal-booking-note" hidden></p>
-      </div>
-      <p class="service-modal-disclaimer">As informações são gerais e não substituem avaliação profissional ou
-        acompanhamento médico. A conduta é definida para cada pessoa.</p>
     </div>
   </div>
   <div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" hidden>
