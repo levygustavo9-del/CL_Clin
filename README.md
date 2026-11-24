@@ -14,7 +14,7 @@ Site institucional estático em HTML, CSS e JavaScript, pronto para publicação
 
 A logo oficial em cobre aparece à esquerda sobre uma placa clara, com navegação e agendamento à direita no desktop. No mobile, a navegação abre em painel claro de tela inteira.
 
-Swiper 11.2.10 é carregado sob demanda: os procedimentos usam o carrossel centralizado até 680 px e as demais galerias até 1120 px. GSAP 3.12.5, ScrollTrigger e Lenis 1.1.20 são carregados para a timeline, independentemente da preferência de movimento do sistema; a página Sobre usa apenas JavaScript nativo. As versões são fixas; é necessária conexão à internet para essas bibliotecas e Google Fonts. Sem Swiper, os cards continuam acessíveis por rolagem horizontal com encaixe suave.
+Swiper 11.2.10 é carregado sob demanda: os procedimentos usam o carrossel centralizado até 680 px e as demais galerias até 1120 px. GSAP 3.12.5, ScrollTrigger e Lenis 1.1.20 são carregados para a timeline e a rolagem suave da página inicial; Lenis também é carregado na página Sobre. A animação da galeria de ambiente continua ativa mesmo com movimento reduzido configurado no sistema; as demais preferências de movimento são respeitadas. As versões são fixas; é necessária conexão à internet para essas bibliotecas e Google Fonts. Sem Swiper, os cards continuam acessíveis por rolagem horizontal com encaixe suave.
 
 ## Testar localmente
 

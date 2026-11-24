@@ -1,5 +1,34 @@
 document.documentElement.classList.add("js");
 
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = () => reject(new Error(`Não foi possível carregar ${src}`));
+    document.head.append(script);
+  });
+}
+
+async function setupSmoothScroll() {
+  try {
+    await loadScript("https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js");
+    const lenis = new window.Lenis({ duration: 1.1, smoothWheel: true, syncTouch: false });
+
+    function raf(time) {
+      lenis.raf(time);
+      window.requestAnimationFrame(raf);
+    }
+
+    window.requestAnimationFrame(raf);
+  } catch (error) {
+    console.error("A rolagem suave não pôde ser carregada.", error);
+  }
+}
+
+setupSmoothScroll();
+
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
